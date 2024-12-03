@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dto.Criteria;
+import dto.PageDto;
 import service.PostService;
 import service.PostServiceImpl;
 import vo.Post;
@@ -32,9 +33,10 @@ public class Promotion extends HttpServlet{
 		}
 		List<Post> postList = postService.listPost(cri);
 		req.setAttribute("posts", postList);
+		req.setAttribute("userId", userId);
+		req.setAttribute("pageDto", new PageDto(cri, postService.count(cri)));
 		req.setAttribute("currentPage", "promotion");
 		req.setAttribute("cno", cno);
-		req.setAttribute("userId", userId);
 		
 		req.getRequestDispatcher("/WEB-INF/k/promotion/promotion.jsp").forward(req, resp);
 	}

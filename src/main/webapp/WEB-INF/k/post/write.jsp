@@ -140,6 +140,9 @@
 					const myTitle = $("#post-title").val();
 					const myContent = $("#comment").val();
 					const myId = $("#post-writer").val(); 
+					if(attachs[0] == null){
+						alert("다른 사용자들을 위해서, 프로모션을 대표하는 이미지를 첨부해 주세요.")
+					}
 					const data = {"title" : myTitle , "content" : myContent, "userId" : myId, "cno" : myCate, "imgData" : attachs[0]["base64"]};
 					console.log(data);
 		            $.ajax({

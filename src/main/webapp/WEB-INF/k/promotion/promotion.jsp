@@ -8,6 +8,9 @@
 	</head>
 	<body class="gothic-a1-regular">
 		<jsp:include page="../common/header.jsp"/>
+		<c:if test="${not empty user}">
+			<jsp:include page="../common/idshower.jsp"/>
+    	</c:if>
 		<div class="wrap">
 			<main class="container mt-5 mb-5">
 				<div class="row">
@@ -17,22 +20,21 @@
 					<div class="col-sm-4">
 					</div>
 					<div class="col-sm-2">
-						<button class="btn btn-outline-light bg-secondary write-button" type="button"><i class="fa-regular fa-pen-to-square"></i> 프로모션 작성하기 </button>
 					</div>
 				</div>
 				<hr>
 					<div class="my-4 row align-items-stretch d-flex justify-content-center text-center">
 						<c:forEach items="${posts}" var="po">
-							<div class="col-sm-3">
+							<div class="col-sm-3" id="card" onclick="viewPromo()">
 								<div class="card bg-secondary mx-1 my-2 container border border-white shadow-lg">
 									<div class="text-center overflow-hidden p-0 bg-secondary " style="width:280px; height:280px">
 										<div class="p-1 img-size-target d-flex justify-content-center align-items-center border-3 border-light shadow-lg" 
-												style="background-image: url('${po.imgData}'); background-size: cover; width:280px; height:280px;">
+												style="background-image: url('${po.imgData}'); background-size: cover; width:280px; height:280px;" id="cardImg">
 										</div>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title small text-truncate border border-warning border-2 p-3 big bg-light" style="object-fit:contain">
-											<a href="${cp}list/view?pno=${po.pno}" class="text-decoration-none"><strong>${po.title}</strong></a></h4>
+										<p class="card-title text-truncate border border-warning border-2 p-3 big bg-light lead " style="object-fit:contain" data-bs-toggle="tooltip" title="${po.title}">
+											<a href="${cp}list/view?pno=${po.pno}" class="text-decoration-none text-dark" ><strong class="small">${po.title}</strong></a></p>
 										<hr>
 										<div class="border border-light my-0 border-2 small bg-dark">
 											<p class="card-text small">프로모터 : ${po.userId}</p>
@@ -46,7 +48,7 @@
 							</div>
 						</c:forEach>
 					</div>
-				<button class="btn btn-outline-light bg-secondary write-button" type="button"><i class="fa-regular fa-pen-to-square"></i> 프로모션 작성하기 </button>
+				<jsp:include page="../common/paging.jsp"/>
 				<hr>
 				<div class="row small">
 					<div class="col-sm-6 small my-3">
@@ -59,25 +61,25 @@
 							<br>
 							그렇다면 후원을 통해 프리미엄 프로모터가 되세요! 
 						</p>
-						<a class="text-warning text-end">후원하기</a>
+						<a class="text-warning text-end" href="">후원하기</a>
 					</div>
 					<div class="col-sm-4">
 					</div>
 					<div class="col-sm-2"><button class="btn btn-outline-light bg-secondary write-button" type="button"><i class="fa-regular fa-pen-to-square"></i> 프로모션 작성하기 </button></div>
 				</div>
-				<jsp:include page="../common/paging.jsp"/>
+				
 			</main>
 		</div>
 		<jsp:include page="../common/footer.jsp"/>
 		<script>
-		$(".write-button").click(function(){
-			if(${user.id == null}){
-				alert("SYS :: No Session ; Log in first")
-				const noSessionUrl = "intro"
-				location.href = noSessionUrl;
-			}
-			const url = "post/write?cno="+${cno};
-			location.href = url;
-		})
+			$(".write-button").click(function(){
+				if(${user.id == null}){
+					alert("SYS :: No Session ; Log in first")
+					const noSessionUrl = "intro"
+					location.href = noSessionUrl;
+				}
+				const url = "post/write?cno="+${cno};
+				location.href = url;
+			})			
 		</script>
 	</body>

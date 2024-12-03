@@ -33,7 +33,7 @@
             		</c:if>
             		<tr>
             			<td>${p.pno}</td>
-                   		<td class="text-start text-truncate"><a href="${cp}list/view?pno=${p.pno}" class="text-white text-decoration-none">${p.title}</a></td>
+                   		<td class="text-start text-truncate"><a href="${cp}list/view?pno=${p.pno}" class="text-white text-decoration-none" data-bs-toggle="tooltip" title="${p.title}">${p.title}</a></td>
             			<td><button type="button" class="btn text-decoration-none text-white post-writer" data-bs-toggle="popover" title="${p.userId}" data-bs-content="프로필 정보">${p.userId}</button></td>
            			    <td><fmt:formatDate value="${p.createDate}" pattern="yyyy/MM/dd" /></td>
    	                    <td>${p.viewCnt}</td>
