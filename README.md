@@ -63,4 +63,5 @@
 > * 24.11.30 => *html 구조 구현(user, post, manage) + sevlet, mapper, service + 9 WIP // gallery, about us, notice + 2 WIP // Sieebar 구현 완료 // 비밀번호 암호화 + 복호화*
 > * 24.12.01 => *html 구조 구현(user, post, manage) + sevlet, mapper, service + 10 WIP // promotion write, gallery, about us, notice + 3 WIP // 관리자, 일반 사용자 구분*
 > * 24.12.01 => *html 구조 구현(user, post, manage) + sevlet, mapper, service + 11 WIP // promotion write, gallery, about us, notice + 4 WIP*
-> * 24.12.02 => *html 구조 구현(user, post, manage) + sevlet, mapper, service + 12 WIP //*
+> * 24.12.02 => sevlet, mapper, service + 12 WIP // ppt 작업 시작*
+> * 24.12.03 => *최종 수정 및 구현부 세부사항 조정 // ppt 완료 *
