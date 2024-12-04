@@ -37,9 +37,9 @@
 						<c:forEach items="${posts}" var="po">
 							<div class="col-sm-3" id="card" >
 								<div class="card bg-secondary mx-1 my-2 container border border-white shadow-lg card-target" data-pno="${po.pno}">
-									<div class="text-center overflow-hidden p-0 bg-secondary " style="width:280px; height:280px">
+									<div class="text-center overflow-hidden p-0 bg-secondary ">
 										<div class="p-1 img-size-target d-flex justify-content-center align-items-center border-3 border-light shadow-lg" 
-												style="background-image: url('${po.imgData}'); background-size: cover; width:280px; height:280px;" id="cardImg">
+												style="background-image: url('${po.imgData}'); background-size: cover; height:280px;" id="cardImg">
 										</div>
 									</div>
 									<div class="card-body">
