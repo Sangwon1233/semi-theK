@@ -7,7 +7,7 @@
 	<body class="bg-dark d-flex flex-column min-vh-100 gothic-a1-regular ">
 		<div class="wrap">
 			<jsp:include page="../common/header.jsp"/>
-			<main class="mt-2 mb-5">
+			<main class="">
 				<div data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
 
 					<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed">

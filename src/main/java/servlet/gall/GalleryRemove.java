@@ -28,7 +28,7 @@ public class GalleryRemove extends HttpServlet{
 		System.out.println("1111");
 		service.remove(Integer.parseInt(pno));
 		System.out.println("22222");
-		Commons.printMsg("삭제 되었습니다.", "/K/kallery", resp);
+		Commons.printMsg("삭제 되었습니다.", "/k/kallery", resp);
 		
 		/*
 		 * req.getRequestDispatcher("/WEB-INF/k/gall/galleryView.jsp").forward(req,

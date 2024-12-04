@@ -7,7 +7,7 @@
 	</head>
 	<body class="bg-dark d-flex flex-column min-vh-100 gothic-a1-regular ">
 		<div class="wrap">
-			<main class="mt-5 mb-5">
+			<main class="">
 				<jsp:include page="../common/header.jsp"/>
 				<hr class="mb-5">
 				

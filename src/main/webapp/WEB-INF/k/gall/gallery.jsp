@@ -33,7 +33,7 @@
 	<main class="mt-5 mb-5">
 		<hr class="mb-5">
 		<div class="card d-flex m-5 border-0" >
-			<div class="d-flex p-2 flex-wrap" >
+			<div class="d-flex p-2 flex-wrap justify-content-center" >
 				<c:forEach items="${posts}" var="post">
 					<div class="card m-2 card-hover" data-bs-toggle="modal" data-bs-target="#exampleModal" data-pno="${post.pno}" style="width:397px;">
 						<div class="card-header text-truncate">${post.title}</div>
@@ -67,7 +67,7 @@
 			
 			</div>
 		</div>
-		<div class="d-flex justify-content-end mt-4 me-5">
+		<div class="d-flex justify-content-end mt-4" style="margin-right:11%">
             <button type="button" class="btn btn-secondary" onclick="window.location.href='kallery/write'" >글쓰기</button>
         </div>
 		<jsp:include page="../common/paging.jsp"></jsp:include>
@@ -150,7 +150,7 @@
 		}
 		
 		$cnt.text(cnt);
-		
+		console.log(pno);
 		$(".card-hover[data-pno="+pno+"]").each(function () {
 		    const $otherLikeY = $(this).find(".my-push i").eq(0);
 		    const $otherLikeN = $(this).find(".my-push i").eq(1);

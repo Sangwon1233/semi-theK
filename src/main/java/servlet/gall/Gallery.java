@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dto.Criteria;
+import dto.PageDto;
 import dto.PostDto;
 import service.PostService;
 import service.PostServiceImpl;
@@ -32,11 +33,14 @@ public class Gallery extends HttpServlet{
 			req.getRequestDispatcher("/WEB-INF/k/user/intro.jsp").forward(req, resp);
 	        return;
 		}
+		
 		List<PostDto> postDtos = service.postAndLike(cri,user.getId());
 		
 		req.setAttribute("userId", user.getId());
 		req.setAttribute("posts", postDtos);
 		req.setAttribute("currentPage", "kallery");
+		req.setAttribute("pageDto", new PageDto(cri, service.count(cri)));
+		
 		
 		req.getRequestDispatcher("/WEB-INF/k/gall/gallery.jsp").forward(req, resp);
 	}

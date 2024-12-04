@@ -5,6 +5,16 @@
 <html lang="ko" data-bs-theme="dark">
 	<head>
 		<jsp:include page="../common/head.jsp"	/>
+		<style>
+		.card-target {
+		    transition: transform 0.3s ease, box-shadow 0.3s ease;
+		    cursor: pointer;
+		}
+		
+		.card-target:hover {
+		    transform: scale(1.1);
+		}
+		</style>
 	</head>
 	<body class="gothic-a1-regular">
 		<jsp:include page="../common/header.jsp"/>
@@ -25,8 +35,8 @@
 				<hr>
 					<div class="my-4 row align-items-stretch d-flex justify-content-center text-center">
 						<c:forEach items="${posts}" var="po">
-							<div class="col-sm-3" id="card" onclick="viewPromo()">
-								<div class="card bg-secondary mx-1 my-2 container border border-white shadow-lg">
+							<div class="col-sm-3" id="card" >
+								<div class="card bg-secondary mx-1 my-2 container border border-white shadow-lg card-target" data-pno="${po.pno}">
 									<div class="text-center overflow-hidden p-0 bg-secondary " style="width:280px; height:280px">
 										<div class="p-1 img-size-target d-flex justify-content-center align-items-center border-3 border-light shadow-lg" 
 												style="background-image: url('${po.imgData}'); background-size: cover; width:280px; height:280px;" id="cardImg">
@@ -72,6 +82,14 @@
 		</div>
 		<jsp:include page="../common/footer.jsp"/>
 		<script>
+			$(".card-target").click(function(){
+				console.log($(this).data("pno"));
+				location.href = "list/view?pno="+$(this).data("pno");
+				
+			})
+		
+		
+		/* 
 			$(".write-button").click(function(){
 				if(${user.id == null}){
 					alert("SYS :: No Session ; Log in first")
@@ -80,6 +98,6 @@
 				}
 				const url = "post/write?cno="+${cno};
 				location.href = url;
-			})			
+			})			 */
 		</script>
 	</body>
